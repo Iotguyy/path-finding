@@ -20,7 +20,7 @@ To run the Algorithm Visualizer project locally, follow these steps:
 git clone https://github.com/your-username/algorithm-visualizer.git
 ```
 
-2.Enter into the project directory
+2. Enter into the project directory
 
 ```
 cd algorithm-visualizer
