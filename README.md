@@ -16,14 +16,14 @@ To run the Algorithm Visualizer project locally, follow these steps:
 
 1. Clone the repository to your local machine:
 
-   ```bash
-   git clone https://github.com/your-username/algorithm-visualizer.git
-   ```
+```bash
+git clone https://github.com/your-username/algorithm-visualizer.git
+```
 
 2.Enter into the project directory
 
 ```
-   cd algorithm-visualizer
+cd algorithm-visualizer
 ```
 
 3.
