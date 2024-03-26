@@ -14,7 +14,7 @@ This project is a web-based tool for visualizing various algorithms, allowing us
 
 To run the Algorithm Visualizer project locally, follow these steps:
 
-1. Clone the repository to your local machine:
+<!-- 1. Clone the repository to your local machine:
 
    ```bash
    git clone https://github.com/your-username/algorithm-visualizer.git
@@ -36,4 +36,22 @@ yarn install
 
 '''
 Open your web browser and visit http://localhost:3000 to view the Algorithm Visualizer application
-'''
+''' -->
+
+# Clone the repository to your local machine:
+git clone https://github.com/your-username/algorithm-visualizer.git
+
+# Enter into the project directory
+cd algorithm-visualizer
+
+# Install dependencies
+npm install
+## or
+yarn install
+
+# Start the development server
+npm start
+## or
+yarn start
+
+# Open your web browser and visit http://localhost:3000 to view the Algorithm Visualizer application
