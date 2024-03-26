@@ -1,29 +1,34 @@
-# Pathfinding Visualizer
+# Algorithm Visualizer
 
-Welcome to Pathfinding Visualizer! I built this application because I was fascinated by pathfinding algorithms, and I wanted to visualize them in action. I hope that you enjoy playing around with this visualization tool just as much as I enjoyed building it. You can access it here (use Google Chrome!): https://clementmihailescu.github.io/Pathfinding-Visualizer/
+This project is a web-based tool for visualizing various algorithms, allowing users to understand how they work through interactive visualizations. It is intended for educational purposes and can be used to learn about algorithms such as sorting, searching, pathfinding, and more.
 
-## Meet the Algorithms
+## Features
 
-This application supports the following algorithms: 
+- Visualization of various algorithms including sorting algorithms (e.g., Bubble Sort, Quick Sort), searching algorithms (e.g., Binary Search), and pathfinding algorithms (e.g., Dijkstra's Algorithm, A* Search).
+- Interactive user interface with controls for customizing input data, adjusting speed, and pausing/resuming visualizations.
+- Ability to generate random input data for algorithms, allowing users to experiment with different scenarios.
+- Real-time visualization updates, providing users with immediate feedback as algorithms progress.
+- Detailed explanations and step-by-step visualizations to aid in understanding algorithm behavior.
 
-**Dijkstra's Algorithm** (weighted): the father of pathfinding algorithms; guarantees the shortest path
+## Getting Started
 
-**A* Search** (weighted): arguably the best pathfinding algorithm; uses heuristics to guarantee the shortest path much faster than Dijkstra's Algorithm
+To run the Algorithm Visualizer project locally, follow these steps:
 
-**Greedy Best-first Search** (weighted): a faster, more heuristic-heavy version of A*; does not guarantee the shortest path
+1. Clone the repository to your local machine:
 
-**Swarm Algorithm** (weighted): a mixture of Dijkstra's Algorithm and A*; does not guarantee the shortest-path
+   ```bash
+   git clone https://github.com/your-username/algorithm-visualizer.git
 
-**Convergent Swarm Algorithm** (weighted): the faster, more heuristic-heavy version of Swarm; does not guarantee the shortest path
+2.Enter into the project directory
 
-**Bidirectional Swarm Algorithm** (weighted): Swarm from both sides; does not guarantee the shortest path
+cd algorithm-visualizer
 
-**Breath-first Search** (unweighted): a great algorithm; guarantees the shortest path
+3.
 
-**Depth-first Search** (unweighted): a very bad algorithm for pathfinding; does not guarantee the shortest path
+npm install
+# or
+yarn install
 
-On top of the pathfinding algorithms listed above, I implemented a **Recursive Division** Maze Generation algorithm.
+4.
 
-## More about the Swarm Algorithm
-
-The Swarm Algorithm is an algorithm that I - at least presumably so (I was unable to find anything close to it online) - co-developed with a good friend and colleague, Hussein Farah. The algorithm is essentially a mixture of Dijkstra's Algorithm and A* Search; more precisely, while it converges to the target node like A* , it still explores quite a few neighboring nodes surrounding the start node like Dijkstra's. The algorithm differentiates itself from A* through its use of heuristics: it continually updates nodes' distance from the start node while taking into account their estimated distance from the target node. This effectively "balances" the difference in total distance between nodes closer to the start node and nodes closer to the target node, which results in the triangle-like shape of the Swarm Algorithm. We named the algorithm "Swarm" because one of its potential applications could be seen in a video-game where a character must keep track of a boss with high priority (the target node), all the while keeping tracking of neighboring enemies that might be swarming nearby. 
+Open your web browser and visit http://localhost:3000 to view the Algorithm Visualizer application
