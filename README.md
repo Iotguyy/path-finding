@@ -39,6 +39,7 @@ Open your web browser and visit http://localhost:3000 to view the Algorithm Visu
 ''' -->
 
 # Clone the repository to your local machine:
+'''
 git clone https://github.com/your-username/algorithm-visualizer.git
 
 # Enter into the project directory
