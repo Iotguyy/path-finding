@@ -21,14 +21,17 @@ To run the Algorithm Visualizer project locally, follow these steps:
 
 2.Enter into the project directory
 
-cd algorithm-visualizer
+'''bash
+   cd algorithm-visualizer
 
 3.
 
+'''bash
 npm install
 # or
 yarn install
 
 4.
 
+'''bash
 Open your web browser and visit http://localhost:3000 to view the Algorithm Visualizer application
