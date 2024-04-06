@@ -1134,31 +1134,31 @@ Board.prototype.toggleButtons = function() {
       document.getElementById("adjustSpeed").innerHTML = 'Speed: Slow<span class="caret"></span>';
     }
 
-    document.getElementById("startStairDemonstration").onclick = () => {
-      this.clearWalls();
-      this.clearPath("clickedButton");
-      this.toggleButtons();
-      stairDemonstration(this);
-      mazeGenerationAnimations(this);
-    }
+    // document.getElementById("startStairDemonstration").onclick = () => {
+    //   this.clearWalls();
+    //   this.clearPath("clickedButton");
+    //   this.toggleButtons();
+    //   stairDemonstration(this);
+    //   mazeGenerationAnimations(this);
+    // }
 
 
-    document.getElementById("startButtonBidirectional").onclick = () => {
-      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Bidirectional Swarm!</button>'
-      this.currentAlgorithm = "bidirectional";
-      this.currentHeuristic = "manhattanDistance";
-      if (this.numberOfObjects) {
-        let objectNodeId = this.object;
-        document.getElementById("startButtonAddObject").innerHTML = '<a href="#">Add a Bomb</a></li>';
-        document.getElementById(objectNodeId).className = "unvisited";
-        this.object = null;
-        this.numberOfObjects = 0;
-        this.nodes[objectNodeId].status = "unvisited";
-        this.isObject = false;
-      }
-      this.clearPath("clickedButton");
-      this.changeStartNodeImages();
-    }
+    // document.getElementById("startButtonBidirectional").onclick = () => {
+    //   document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Bidirectional Swarm!</button>'
+    //   this.currentAlgorithm = "bidirectional";
+    //   this.currentHeuristic = "manhattanDistance";
+    //   if (this.numberOfObjects) {
+    //     let objectNodeId = this.object;
+    //     document.getElementById("startButtonAddObject").innerHTML = '<a href="#">Add a Bomb</a></li>';
+    //     document.getElementById(objectNodeId).className = "unvisited";
+    //     this.object = null;
+    //     this.numberOfObjects = 0;
+    //     this.nodes[objectNodeId].status = "unvisited";
+    //     this.isObject = false;
+    //   }
+    //   this.clearPath("clickedButton");
+    //   this.changeStartNodeImages();
+    // }
 
     document.getElementById("startButtonDijkstra").onclick = () => {
       document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Dijkstra\'s!</button>'
@@ -1166,12 +1166,12 @@ Board.prototype.toggleButtons = function() {
       this.changeStartNodeImages();
     }
 
-    document.getElementById("startButtonAStar").onclick = () => {
-      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Swarm!</button>'
-      this.currentAlgorithm = "CLA";
-      this.currentHeuristic = "manhattanDistance"
-      this.changeStartNodeImages();
-    }
+    // document.getElementById("startButtonAStar").onclick = () => {
+    //   document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Swarm!</button>'
+    //   this.currentAlgorithm = "CLA";
+    //   this.currentHeuristic = "manhattanDistance"
+    //   this.changeStartNodeImages();
+    // }
 
     document.getElementById("startButtonAStar2").onclick = () => {
       document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize A*!</button>'
@@ -1180,12 +1180,12 @@ Board.prototype.toggleButtons = function() {
       this.changeStartNodeImages();
     }
 
-    document.getElementById("startButtonAStar3").onclick = () => {
-      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Convergent Swarm!</button>'
-      this.currentAlgorithm = "CLA";
-      this.currentHeuristic = "extraPoweredManhattanDistance"
-      this.changeStartNodeImages();
-    }
+    // document.getElementById("startButtonAStar3").onclick = () => {
+    //   document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Convergent Swarm!</button>'
+    //   this.currentAlgorithm = "CLA";
+    //   this.currentHeuristic = "extraPoweredManhattanDistance"
+    //   this.changeStartNodeImages();
+    // }
 
     document.getElementById("startButtonGreedy").onclick = () => {
       document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize Greedy!</button>'
@@ -1193,12 +1193,12 @@ Board.prototype.toggleButtons = function() {
       this.changeStartNodeImages();
     }
 
-    document.getElementById("startButtonBFS").onclick = () => {
-      document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize BFS!</button>'
-      this.currentAlgorithm = "bfs";
-      this.clearWeights();
-      this.changeStartNodeImages();
-    }
+    // document.getElementById("startButtonBFS").onclick = () => {
+    //   document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize BFS!</button>'
+    //   this.currentAlgorithm = "bfs";
+    //   this.clearWeights();
+    //   this.changeStartNodeImages();
+    // }
 
     document.getElementById("startButtonDFS").onclick = () => {
       document.getElementById("startButtonStart").innerHTML = '<button id="actualStartButton" class="btn btn-default navbar-btn" type="button">Visualize DFS!</button>'
@@ -1221,11 +1221,11 @@ Board.prototype.toggleButtons = function() {
       mazeGenerationAnimations(this);
     }
 
-    document.getElementById("startButtonCreateMazeWeights").onclick = () => {
-      this.clearWalls();
-      this.clearPath("clickedButton");
-      this.createMazeOne("weight");
-    }
+    // document.getElementById("startButtonCreateMazeWeights").onclick = () => {
+    //   this.clearWalls();
+    //   this.clearPath("clickedButton");
+    //   this.createMazeOne("weight");
+    // }
 
     document.getElementById("startButtonClearBoard").onclick = () => {
       document.getElementById("startButtonAddObject").innerHTML = '<a href="#">Add Bomb</a></li>';
@@ -1291,21 +1291,21 @@ Board.prototype.toggleButtons = function() {
       this.clearPath("clickedButton");
     }
 
-    document.getElementById("startButtonCreateMazeThree").onclick = () => {
-      this.clearWalls();
-      this.clearPath("clickedButton");
-      this.toggleButtons();
-      otherMaze(this, 2, this.height - 3, 2, this.width - 3, "vertical", false);
-      mazeGenerationAnimations(this);
-    }
+    // document.getElementById("startButtonCreateMazeThree").onclick = () => {
+    //   this.clearWalls();
+    //   this.clearPath("clickedButton");
+    //   this.toggleButtons();
+    //   otherMaze(this, 2, this.height - 3, 2, this.width - 3, "vertical", false);
+    //   mazeGenerationAnimations(this);
+    // }
 
-    document.getElementById("startButtonCreateMazeFour").onclick = () => {
-      this.clearWalls();
-      this.clearPath("clickedButton");
-      this.toggleButtons();
-      otherOtherMaze(this, 2, this.height - 3, 2, this.width - 3, "horizontal", false);
-      mazeGenerationAnimations(this);
-    }
+    // document.getElementById("startButtonCreateMazeFour").onclick = () => {
+    //   this.clearWalls();
+    //   this.clearPath("clickedButton");
+    //   this.toggleButtons();
+    //   otherOtherMaze(this, 2, this.height - 3, 2, this.width - 3, "horizontal", false);
+    //   mazeGenerationAnimations(this);
+    // }
 
     document.getElementById("startButtonAddObject").onclick = () => {
       let innerHTML = document.getElementById("startButtonAddObject").innerHTML;
@@ -1346,40 +1346,40 @@ Board.prototype.toggleButtons = function() {
     }
     document.getElementById("startButtonCreateMazeOne").className = "navbar-inverse navbar-nav";
     document.getElementById("startButtonCreateMazeTwo").className = "navbar-inverse navbar-nav";
-    document.getElementById("startButtonCreateMazeThree").className = "navbar-inverse navbar-nav";
-    document.getElementById("startButtonCreateMazeFour").className = "navbar-inverse navbar-nav";
-    document.getElementById("startButtonCreateMazeWeights").className = "navbar-inverse navbar-nav";
-    document.getElementById("startStairDemonstration").className = "navbar-inverse navbar-nav";
+    // document.getElementById("startButtonCreateMazeThree").className = "navbar-inverse navbar-nav";
+    // document.getElementById("startButtonCreateMazeFour").className = "navbar-inverse navbar-nav";
+    // document.getElementById("startButtonCreateMazeWeights").className = "navbar-inverse navbar-nav";
+    // document.getElementById("startStairDemonstration").className = "navbar-inverse navbar-nav";
     document.getElementById("startButtonDFS").className = "navbar-inverse navbar-nav";
-    document.getElementById("startButtonBFS").className = "navbar-inverse navbar-nav";
+    // document.getElementById("startButtonBFS").className = "navbar-inverse navbar-nav";
     document.getElementById("startButtonDijkstra").className = "navbar-inverse navbar-nav";
-    document.getElementById("startButtonAStar").className = "navbar-inverse navbar-nav";
+    // document.getElementById("startButtonAStar").className = "navbar-inverse navbar-nav";
     document.getElementById("startButtonAStar2").className = "navbar-inverse navbar-nav";
-    document.getElementById("startButtonAStar3").className = "navbar-inverse navbar-nav";
+    // document.getElementById("startButtonAStar3").className = "navbar-inverse navbar-nav";
     document.getElementById("adjustFast").className = "navbar-inverse navbar-nav";
     document.getElementById("adjustAverage").className = "navbar-inverse navbar-nav";
     document.getElementById("adjustSlow").className = "navbar-inverse navbar-nav";
-    document.getElementById("startButtonBidirectional").className = "navbar-inverse navbar-nav";
+    // document.getElementById("startButtonBidirectional").className = "navbar-inverse navbar-nav";
     document.getElementById("startButtonGreedy").className = "navbar-inverse navbar-nav";
     document.getElementById("actualStartButton").style.backgroundColor = "";
 
   } else {
     this.buttonsOn = false;
     document.getElementById("startButtonDFS").onclick = null;
-    document.getElementById("startButtonBFS").onclick = null;
+    // document.getElementById("startButtonBFS").onclick = null;
     document.getElementById("startButtonDijkstra").onclick = null;
-    document.getElementById("startButtonAStar").onclick = null;
+    // document.getElementById("startButtonAStar").onclick = null;
     document.getElementById("startButtonGreedy").onclick = null;
     document.getElementById("startButtonAddObject").onclick = null;
     document.getElementById("startButtonAStar2").onclick = null;
-    document.getElementById("startButtonAStar3").onclick = null;
-    document.getElementById("startButtonBidirectional").onclick = null;
+    // document.getElementById("startButtonAStar3").onclick = null;
+    // document.getElementById("startButtonBidirectional").onclick = null;
     document.getElementById("startButtonCreateMazeOne").onclick = null;
     document.getElementById("startButtonCreateMazeTwo").onclick = null;
-    document.getElementById("startButtonCreateMazeThree").onclick = null;
-    document.getElementById("startButtonCreateMazeFour").onclick = null;
-    document.getElementById("startButtonCreateMazeWeights").onclick = null;
-    document.getElementById("startStairDemonstration").onclick = null;
+    // document.getElementById("startButtonCreateMazeThree").onclick = null;
+    // document.getElementById("startButtonCreateMazeFour").onclick = null;
+    // document.getElementById("startButtonCreateMazeWeights").onclick = null;
+    // document.getElementById("startStairDemonstration").onclick = null;
     document.getElementById("startButtonClearPath").onclick = null;
     document.getElementById("startButtonClearWalls").onclick = null;
     document.getElementById("startButtonClearBoard").onclick = null;
@@ -1397,18 +1397,18 @@ Board.prototype.toggleButtons = function() {
     document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav disabledA";
     document.getElementById("startButtonCreateMazeOne").className = "navbar-inverse navbar-nav disabledA";
     document.getElementById("startButtonCreateMazeTwo").className = "navbar-inverse navbar-nav disabledA";
-    document.getElementById("startButtonCreateMazeThree").className = "navbar-inverse navbar-nav disabledA";
-    document.getElementById("startButtonCreateMazeFour").className = "navbar-inverse navbar-nav disabledA";
-    document.getElementById("startButtonCreateMazeWeights").className = "navbar-inverse navbar-nav disabledA";
-    document.getElementById("startStairDemonstration").className = "navbar-inverse navbar-nav disabledA";
+    // document.getElementById("startButtonCreateMazeThree").className = "navbar-inverse navbar-nav disabledA";
+    // document.getElementById("startButtonCreateMazeFour").className = "navbar-inverse navbar-nav disabledA";
+    // document.getElementById("startButtonCreateMazeWeights").className = "navbar-inverse navbar-nav disabledA";
+    // document.getElementById("startStairDemonstration").className = "navbar-inverse navbar-nav disabledA";
     document.getElementById("startButtonDFS").className = "navbar-inverse navbar-nav disabledA";
-    document.getElementById("startButtonBFS").className = "navbar-inverse navbar-nav disabledA";
+    // document.getElementById("startButtonBFS").className = "navbar-inverse navbar-nav disabledA";
     document.getElementById("startButtonDijkstra").className = "navbar-inverse navbar-nav disabledA";
-    document.getElementById("startButtonAStar").className = "navbar-inverse navbar-nav disabledA";
+    // document.getElementById("startButtonAStar").className = "navbar-inverse navbar-nav disabledA";
     document.getElementById("startButtonGreedy").className = "navbar-inverse navbar-nav disabledA";
     document.getElementById("startButtonAStar2").className = "navbar-inverse navbar-nav disabledA";
-    document.getElementById("startButtonAStar3").className = "navbar-inverse navbar-nav disabledA";
-    document.getElementById("startButtonBidirectional").className = "navbar-inverse navbar-nav disabledA";
+    // document.getElementById("startButtonAStar3").className = "navbar-inverse navbar-nav disabledA";
+    // document.getElementById("startButtonBidirectional").className = "navbar-inverse navbar-nav disabledA";
 
     document.getElementById("actualStartButton").style.backgroundColor = "rgb(185, 15, 15)";
   }
