@@ -614,7 +614,7 @@
   background-color:white
 }
 
-.borderlessWeight {
+/* .borderlessWeight {
   background-image: url(weight.svg);
   background-position: center;
   background-repeat: no-repeat;
@@ -627,7 +627,7 @@
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-play-state: running;
-}
+} */
 
 .unvisited.weight{
   /*border: 1px solid rgb(175, 216, 248);*/

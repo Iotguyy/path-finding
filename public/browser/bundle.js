@@ -976,7 +976,7 @@ Board.prototype.changeStartNodeImages = function() {
     } else {
       document.getElementById("algorithmDescriptor").innerHTML = `${name} is <i><b>unweighted</b></i> and <i><b>guarantees</b></i> the shortest path!`;
     }
-    document.getElementById("weightLegend").className = "strikethrough";
+    // document.getElementById("weightLegend").className = "strikethrough";
     for (let i = 0; i < 14; i++) {
       let j = i.toString();
       let backgroundImage = document.styleSheets["1"].rules[j].style.backgroundImage;
@@ -986,22 +986,22 @@ Board.prototype.changeStartNodeImages = function() {
     if (this.currentAlgorithm === "greedy" || this.currentAlgorithm === "CLA") {
       document.getElementById("algorithmDescriptor").innerHTML = `${name} is <i><b>weighted</b></i> and <i><b>does not guarantee</b></i> the shortest path!`;
     }
-    document.getElementById("weightLegend").className = "";
+    // document.getElementById("weightLegend").className = "";
     for (let i = 0; i < 14; i++) {
       let j = i.toString();
       let backgroundImage = document.styleSheets["1"].rules[j].style.backgroundImage;
       document.styleSheets["1"].rules[j].style.backgroundImage = backgroundImage.replace("spaceship", "triangle");
     }
   }
-  if (this.currentAlgorithm === "bidirectional") {
+  // if (this.currentAlgorithm === "bidirectional") {
 
-    document.getElementById("algorithmDescriptor").innerHTML = `${name} is <i><b>weighted</b></i> and <i><b>does not guarantee</b></i> the shortest path!`;
-    document.getElementById("bombLegend").className = "strikethrough";
-    document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav disabledA";
-  } else {
-    document.getElementById("bombLegend").className = "";
-    document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav";
-  }
+  //   document.getElementById("algorithmDescriptor").innerHTML = `${name} is <i><b>weighted</b></i> and <i><b>does not guarantee</b></i> the shortest path!`;
+  //   document.getElementById("bombLegend").className = "strikethrough";
+  //   // document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav disabledA";
+  // } else {
+  //   document.getElementById("bombLegend").className = "";
+  //   document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav";
+  // }
   if (guaranteed.includes(this.currentAlgorithm)) {
     document.getElementById("algorithmDescriptor").innerHTML = `${name} is <i><b>weighted</b></i> and <i><b>guarantees</b></i> the shortest path!`;
   }
@@ -1227,61 +1227,61 @@ Board.prototype.toggleButtons = function() {
     //   this.createMazeOne("weight");
     // }
 
-    document.getElementById("startButtonClearBoard").onclick = () => {
-      document.getElementById("startButtonAddObject").innerHTML = '<a href="#">Add Bomb</a></li>';
+    // document.getElementById("startButtonClearBoard").onclick = () => {
+    //   document.getElementById("startButtonAddObject").innerHTML = '<a href="#">Add Bomb</a></li>';
 
 
 
-      let navbarHeight = document.getElementById("navbarDiv").clientHeight;
-      let textHeight = document.getElementById("mainText").clientHeight + document.getElementById("algorithmDescriptor").clientHeight;
-      let height = Math.floor((document.documentElement.clientHeight - navbarHeight - textHeight) / 28);
-      let width = Math.floor(document.documentElement.clientWidth / 25);
-      let start = Math.floor(height / 2).toString() + "-" + Math.floor(width / 4).toString();
-      let target = Math.floor(height / 2).toString() + "-" + Math.floor(3 * width / 4).toString();
+    //   let navbarHeight = document.getElementById("navbarDiv").clientHeight;
+    //   let textHeight = document.getElementById("mainText").clientHeight + document.getElementById("algorithmDescriptor").clientHeight;
+    //   let height = Math.floor((document.documentElement.clientHeight - navbarHeight - textHeight) / 28);
+    //   let width = Math.floor(document.documentElement.clientWidth / 25);
+    //   let start = Math.floor(height / 2).toString() + "-" + Math.floor(width / 4).toString();
+    //   let target = Math.floor(height / 2).toString() + "-" + Math.floor(3 * width / 4).toString();
 
-        Object.keys(this.nodes).forEach(id => {
-          let currentNode = this.nodes[id];
-          let currentHTMLNode = document.getElementById(id);
-          if (id === start) {
-            currentHTMLNode.className = "start";
-            currentNode.status = "start";
-          } else if (id === target) {
-            currentHTMLNode.className = "target";
-            currentNode.status = "target"
-          } else {
-            currentHTMLNode.className = "unvisited";
-            currentNode.status = "unvisited";
-          }
-          currentNode.previousNode = null;
-          currentNode.path = null;
-          currentNode.direction = null;
-          currentNode.storedDirection = null;
-          currentNode.distance = Infinity;
-          currentNode.totalDistance = Infinity;
-          currentNode.heuristicDistance = null;
-          currentNode.weight = 0;
-          currentNode.relatesToObject = false;
-          currentNode.overwriteObjectRelation = false;
+    //     Object.keys(this.nodes).forEach(id => {
+    //       let currentNode = this.nodes[id];
+    //       let currentHTMLNode = document.getElementById(id);
+    //       if (id === start) {
+    //         currentHTMLNode.className = "start";
+    //         currentNode.status = "start";
+    //       } else if (id === target) {
+    //         currentHTMLNode.className = "target";
+    //         currentNode.status = "target"
+    //       } else {
+    //         currentHTMLNode.className = "unvisited";
+    //         currentNode.status = "unvisited";
+    //       }
+    //       currentNode.previousNode = null;
+    //       currentNode.path = null;
+    //       currentNode.direction = null;
+    //       currentNode.storedDirection = null;
+    //       currentNode.distance = Infinity;
+    //       currentNode.totalDistance = Infinity;
+    //       currentNode.heuristicDistance = null;
+    //       currentNode.weight = 0;
+    //       currentNode.relatesToObject = false;
+    //       currentNode.overwriteObjectRelation = false;
 
-        });
-      this.start = start;
-      this.target = target;
-      this.object = null;
-      this.nodesToAnimate = [];
-      this.objectNodesToAnimate = [];
-      this.shortestPathNodesToAnimate = [];
-      this.objectShortestPathNodesToAnimate = [];
-      this.wallsToAnimate = [];
-      this.mouseDown = false;
-      this.pressedNodeStatus = "normal";
-      this.previouslyPressedNodeStatus = null;
-      this.previouslySwitchedNode = null;
-      this.previouslySwitchedNodeWeight = 0;
-      this.keyDown = false;
-      this.algoDone = false;
-      this.numberOfObjects = 0;
-      this.isObject = false;
-    }
+    //     });
+    //   this.start = start;
+    //   this.target = target;
+    //   this.object = null;
+    //   this.nodesToAnimate = [];
+    //   this.objectNodesToAnimate = [];
+    //   this.shortestPathNodesToAnimate = [];
+    //   this.objectShortestPathNodesToAnimate = [];
+    //   this.wallsToAnimate = [];
+    //   this.mouseDown = false;
+    //   this.pressedNodeStatus = "normal";
+    //   this.previouslyPressedNodeStatus = null;
+    //   this.previouslySwitchedNode = null;
+    //   this.previouslySwitchedNodeWeight = 0;
+    //   this.keyDown = false;
+    //   this.algoDone = false;
+    //   this.numberOfObjects = 0;
+    //   this.isObject = false;
+    // }
 
     document.getElementById("startButtonClearWalls").onclick = () => {
       this.clearWalls();
@@ -1307,43 +1307,43 @@ Board.prototype.toggleButtons = function() {
     //   mazeGenerationAnimations(this);
     // }
 
-    document.getElementById("startButtonAddObject").onclick = () => {
-      let innerHTML = document.getElementById("startButtonAddObject").innerHTML;
-      if (this.currentAlgorithm !== "bidirectional") {
-        if (innerHTML.includes("Add")) {
-          let r = Math.floor(this.height / 2);
-          let c = Math.floor(2 * this.width / 4);
-          let objectNodeId = `${r}-${c}`;
-          if (this.target === objectNodeId || this.start === objectNodeId || this.numberOfObjects === 1) {
-            console.log("Failure to place object.");
-          } else {
-            document.getElementById("startButtonAddObject").innerHTML = '<a href="#">Remove Bomb</a></li>';
-            this.clearPath("clickedButton");
-            this.object = objectNodeId;
-            this.numberOfObjects = 1;
-            this.nodes[objectNodeId].status = "object";
-            document.getElementById(objectNodeId).className = "object";
-          }
-        } else {
-          let objectNodeId = this.object;
-          document.getElementById("startButtonAddObject").innerHTML = '<a href="#">Add Bomb</a></li>';
-          document.getElementById(objectNodeId).className = "unvisited";
-          this.object = null;
-          this.numberOfObjects = 0;
-          this.nodes[objectNodeId].status = "unvisited";
-          this.isObject = false;
-          this.clearPath("clickedButton");
-        }
-      }
+    // document.getElementById("startButtonAddObject").onclick = () => {
+    //   let innerHTML = document.getElementById("startButtonAddObject").innerHTML;
+    //   if (this.currentAlgorithm !== "bidirectional") {
+    //     if (innerHTML.includes("Add")) {
+    //       let r = Math.floor(this.height / 2);
+    //       let c = Math.floor(2 * this.width / 4);
+    //       let objectNodeId = `${r}-${c}`;
+    //       if (this.target === objectNodeId || this.start === objectNodeId || this.numberOfObjects === 1) {
+    //         console.log("Failure to place object.");
+    //       } else {
+    //         document.getElementById("startButtonAddObject").innerHTML = '<a href="#">Remove Bomb</a></li>';
+    //         this.clearPath("clickedButton");
+    //         this.object = objectNodeId;
+    //         this.numberOfObjects = 1;
+    //         this.nodes[objectNodeId].status = "object";
+    //         document.getElementById(objectNodeId).className = "object";
+    //       }
+    //     } else {
+    //       let objectNodeId = this.object;
+    //       document.getElementById("startButtonAddObject").innerHTML = '<a href="#">Add Bomb</a></li>';
+    //       document.getElementById(objectNodeId).className = "unvisited";
+    //       this.object = null;
+    //       this.numberOfObjects = 0;
+    //       this.nodes[objectNodeId].status = "unvisited";
+    //       this.isObject = false;
+    //       this.clearPath("clickedButton");
+    //     }
+    //   }
 
-    }
+    // }
 
     document.getElementById("startButtonClearPath").className = "navbar-inverse navbar-nav";
     document.getElementById("startButtonClearWalls").className = "navbar-inverse navbar-nav";
     document.getElementById("startButtonClearBoard").className = "navbar-inverse navbar-nav";
-    if (this.currentAlgorithm !== "bidirectional") {
-      document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav";
-    }
+    // if (this.currentAlgorithm !== "bidirectional") {
+    //   document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav";
+    // }
     document.getElementById("startButtonCreateMazeOne").className = "navbar-inverse navbar-nav";
     document.getElementById("startButtonCreateMazeTwo").className = "navbar-inverse navbar-nav";
     // document.getElementById("startButtonCreateMazeThree").className = "navbar-inverse navbar-nav";
@@ -1370,7 +1370,7 @@ Board.prototype.toggleButtons = function() {
     document.getElementById("startButtonDijkstra").onclick = null;
     // document.getElementById("startButtonAStar").onclick = null;
     document.getElementById("startButtonGreedy").onclick = null;
-    document.getElementById("startButtonAddObject").onclick = null;
+    // document.getElementById("startButtonAddObject").onclick = null;
     document.getElementById("startButtonAStar2").onclick = null;
     // document.getElementById("startButtonAStar3").onclick = null;
     // document.getElementById("startButtonBidirectional").onclick = null;
@@ -1394,7 +1394,7 @@ Board.prototype.toggleButtons = function() {
     document.getElementById("startButtonClearPath").className = "navbar-inverse navbar-nav disabledA";
     document.getElementById("startButtonClearWalls").className = "navbar-inverse navbar-nav disabledA";
     document.getElementById("startButtonClearBoard").className = "navbar-inverse navbar-nav disabledA";
-    document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav disabledA";
+    // document.getElementById("startButtonAddObject").className = "navbar-inverse navbar-nav disabledA";
     document.getElementById("startButtonCreateMazeOne").className = "navbar-inverse navbar-nav disabledA";
     document.getElementById("startButtonCreateMazeTwo").className = "navbar-inverse navbar-nav disabledA";
     // document.getElementById("startButtonCreateMazeThree").className = "navbar-inverse navbar-nav disabledA";
