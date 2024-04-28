@@ -595,17 +595,17 @@
   }
 
   50% {
-    background-color: rgba(97, 0, 20, 0.75);
+    background-color: rgba(38, 230, 160, 0.75);
   }
 
   75% {
     transform: scale(1.2);
-    background-color: rgba(216, 5, 141, 0.75)
+    background-color: rgba(25, 221, 172, 0.75)
   }
 
   100% {
     transform: scale(1.0);
-    background-color: rgba(178, 67, 255, 0.75);
+    background-color: rgba(57, 219, 165);
   }
 }
 

@@ -2,7 +2,7 @@ function mazeGenerationAnimations(board) {
   let nodes = board.wallsToAnimate.slice(0);
   let speed = board.speed === "fast" ?
     5 : board.speed === "average" ?
-      25 : 75;
+      20 : 75;
   function timeout(index) {
     setTimeout(function () {
         if (index === nodes.length){
